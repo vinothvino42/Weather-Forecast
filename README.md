@@ -9,6 +9,13 @@ Get the current weather forecast for your favourite places
 <img src="screenshots.jpg" alt="Screenshot of Weather Forecast App for iOS" />
 </h3>
 
+## Setup
+
+* Create an account in [OpenWeatherMap](https://openweathermap.org)
+* Generate a new `API Key`
+* Copy and paste the generated `API Key` in `API_KEY` property of `WeatherForecastVC` View Controller
+* Then build and run the project
+
 ## Compatibility
 
 This project is written in Swift 4 and requires Xcode 9.1 to build and run.
