@@ -26,15 +26,14 @@ class WeatherForecastVC: UIViewController, CLLocationManagerDelegate, ChangeCity
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         //TODO: Set up the location manager
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
-        locationManager.delegate = nil
+    
     }
-    
-    
     
     //MARK: - Networking
     func getWeatherData(url: String, parameters: [String : String]) {
@@ -44,11 +43,12 @@ class WeatherForecastVC: UIViewController, CLLocationManagerDelegate, ChangeCity
                 print("Success")
                 
                 let weatherJSON: JSON = JSON(response.result.value!)
+                print("WEATHER JSON DATA",weatherJSON)
                 self.updateWeatherData(jsonData: weatherJSON)
                 
             } else {
                 
-                print("Error : \(response.result.error)")
+                print("Error : \(String(describing: response.result.error))")
                 self.cityLabel.text = "Connection Failed"
             }
         }

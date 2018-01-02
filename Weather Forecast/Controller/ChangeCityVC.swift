@@ -31,7 +31,9 @@ class ChangeCityVC: UIViewController {
     }
     
     @IBAction func backBtnPressed(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        DispatchQueue.main.async(execute: {
+            self.dismiss(animated: true, completion: nil)
+        })
     }
     
     override func didReceiveMemoryWarning() {
