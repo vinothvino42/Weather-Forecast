@@ -124,6 +124,9 @@
                                             <constraint firstAttribute="height" constant="40" id="cIq-NR-Lb5"/>
                                         </constraints>
                                         <state key="normal" image="left"/>
+                                        <connections>
+                                            <action selector="backBtnPressed:" destination="Ula-6o-yEy" eventType="touchUpInside" id="WgT-bb-8xb"/>
+                                        </connections>
                                     </button>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your city name here" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ls2-ba-lCx">
                                         <rect key="frame" x="50" y="95.5" width="220" height="30"/>
@@ -140,6 +143,9 @@
                                         <state key="normal" title="Get Weather">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="getWeatherTapped:" destination="Ula-6o-yEy" eventType="touchUpInside" id="0BV-Lb-PhJ"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -168,6 +174,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="24U-Jp-MX4"/>
                     </view>
+                    <connections>
+                        <outlet property="cityTextField" destination="ls2-ba-lCx" id="kbu-VQ-8xS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sg6-vg-lYR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
