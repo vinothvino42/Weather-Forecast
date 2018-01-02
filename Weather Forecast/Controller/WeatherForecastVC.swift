@@ -18,6 +18,7 @@ class WeatherForecastVC: UIViewController, CLLocationManagerDelegate {
     
     //TODO: Declare instance variables
     let locationManager = CLLocationManager()
+    let weatherModel = WeatherModel()
     
     @IBOutlet weak var tempLabel: UILabel!
     @IBOutlet weak var cityLabel: UILabel!
@@ -30,6 +31,7 @@ class WeatherForecastVC: UIViewController, CLLocationManagerDelegate {
         locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
+        locationManager.delegate = nil
     }
     
     //MARK: - Networking
@@ -38,13 +40,31 @@ class WeatherForecastVC: UIViewController, CLLocationManagerDelegate {
         Alamofire.request(url, method: .get, parameters: parameters).responseJSON { (response) in
             if response.result.isSuccess {
                 print("Success")
+                
+                let weatherJSON: JSON = JSON(response.result.value!)
+                self.updateWeatherData(jsonData: weatherJSON)
+                
             } else {
+                
                 print("Error : \(response.result.error)")
                 self.cityLabel.text = "Connection Failed"
             }
         }
     }
 
+    //MARK: - JSON Parsing
+    func updateWeatherData(jsonData: JSON) {
+        
+        if let tempResult = jsonData["main"]["temp"].double {
+            weatherModel.temperature = Int(tempResult - 273.15)
+            weatherModel.city = jsonData["name"].stringValue
+            weatherModel.condition = jsonData["weather"][0]["id"].intValue
+            weatherModel.weatherImageName = weatherModel.updateWeatherIcon(condition: weatherModel.condition)
+        } else {
+            cityLabel.text = "Weather Unavailable"
+        }
+    }
+    
     //MARK: - Location Manager Delegate Methods
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let location = locations[locations.count - 1]
