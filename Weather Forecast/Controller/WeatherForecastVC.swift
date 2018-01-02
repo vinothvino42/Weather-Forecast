@@ -7,19 +7,27 @@
 //
 
 import UIKit
+import CoreLocation
 
-class WeatherForecastVC: UIViewController {
+class WeatherForecastVC: UIViewController, CLLocationManagerDelegate {
 
+    let WEATHER_URL = "http://api.openweathermap.org/data/2.5/weather"
+    let API_KEY = "bb57d5886df3df79bf4d61ebc1d4eb5b"
+    
+    //TODO: Declare instance variables
+    let locationManager = CLLocationManager()
+    
+    @IBOutlet weak var tempLabel: UILabel!
+    @IBOutlet weak var cityLabel: UILabel!
+    @IBOutlet weak var weatherImage: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        //TODO: Set up the location manager
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
+        locationManager.requestWhenInUseAuthorization()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
 
 }
 
