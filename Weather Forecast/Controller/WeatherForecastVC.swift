@@ -14,7 +14,7 @@ import SwiftyJSON
 class WeatherForecastVC: UIViewController, CLLocationManagerDelegate, ChangeCityDelegate {
 
     let WEATHER_URL = "http://api.openweathermap.org/data/2.5/weather"
-    let API_KEY = "YOUR OPEN WEATHER API KEY"
+    let API_KEY = Constant.API_KEY  //Remove "Constant.API_KEY" and place your API KEY here.
     
     //TODO: Declare instance variables
     let locationManager = CLLocationManager()
