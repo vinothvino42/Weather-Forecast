@@ -24,16 +24,17 @@ class ChangeCityVC: UIViewController {
     }
     
     @IBAction func getWeatherTapped(_ sender: Any) {
-        
-        let cityName = cityTextField.text!
-        delegate?.userEnteredNewCityName(city: cityName)
-        self.dismiss(animated: true, completion: nil)
+        DispatchQueue.main.async {
+            let cityName = self.cityTextField.text!
+            self.delegate?.userEnteredNewCityName(city: cityName)
+            self.dismiss(animated: true, completion: nil)
+        }
     }
     
     @IBAction func backBtnPressed(_ sender: Any) {
-        DispatchQueue.main.async(execute: {
+        DispatchQueue.main.async {
             self.dismiss(animated: true, completion: nil)
-        })
+        }
     }
     
     override func didReceiveMemoryWarning() {

@@ -3,18 +3,18 @@
 [![Swift 4](https://img.shields.io/badge/Swift-4.0-orange.svg)](https://swift.org)
 [![Twitter: @vinothvino42](https://img.shields.io/badge/Contact-Twitter-blue.svg?style=flat)](https://twitter.com/vinothvino42)
 
-Get the current weather forecast for your favourite places
+Get the current weather forecast for your favourite places.
 
 <h3 align="center">
-<img src="screenshots.jpg" alt="Screenshot of Weather Forecast App for iOS" />
+<img src="WeatherForecast.png" alt="Screenshot of Weather Forecast App for iOS" />
 </h3>
 
 ## Setup
 
 * Create an account in [OpenWeatherMap](https://openweathermap.org)
-* Generate a new `API Key`
-* Copy and paste the generated `API Key` in `API_KEY` property of `WeatherForecastVC` View Controller
-* Then build and run the project
+* Generate a new `API Key`.
+* Copy and paste the generated `API Key` in `API_KEY` property of `WeatherForecastVC` View Controller.
+* Then build and run the project.
 
 ## Compatibility
 
