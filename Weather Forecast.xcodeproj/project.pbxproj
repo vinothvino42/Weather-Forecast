@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		D1142B0D2104503200F78375 /* VVGooglePlaceTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1142B0C2104503200F78375 /* VVGooglePlaceTextField.swift */; };
 		D1142B0F2104503A00F78375 /* VVGooglePlaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1142B0E2104503A00F78375 /* VVGooglePlaceView.swift */; };
-		D17A7FD820CC094D00F96634 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17A7FD720CC094D00F96634 /* Constant.swift */; };
+		D1142B1421045DD300F78375 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1142B1321045DD300F78375 /* Constant.swift */; };
 		D18A65E11FFB3882001FEAA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18A65E01FFB3882001FEAA7 /* AppDelegate.swift */; };
 		D18A65E31FFB3883001FEAA7 /* WeatherForecastVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18A65E21FFB3883001FEAA7 /* WeatherForecastVC.swift */; };
 		D18A65E61FFB3883001FEAA7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D18A65E41FFB3883001FEAA7 /* Main.storyboard */; };
@@ -25,7 +25,7 @@
 		4E58D09C488AF3050A6F6AF0 /* Pods-Weather Forecast.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weather Forecast.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Weather Forecast/Pods-Weather Forecast.debug.xcconfig"; sourceTree = "<group>"; };
 		D1142B0C2104503200F78375 /* VVGooglePlaceTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VVGooglePlaceTextField.swift; sourceTree = "<group>"; };
 		D1142B0E2104503A00F78375 /* VVGooglePlaceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VVGooglePlaceView.swift; sourceTree = "<group>"; };
-		D17A7FD720CC094D00F96634 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		D1142B1321045DD300F78375 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		D18A65DD1FFB3882001FEAA7 /* Weather Forecast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Weather Forecast.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D18A65E01FFB3882001FEAA7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D18A65E21FFB3883001FEAA7 /* WeatherForecastVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherForecastVC.swift; sourceTree = "<group>"; };
@@ -58,10 +58,10 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		D17A7FD620CC092E00F96634 /* Constants */ = {
+		D1142B1221045DA800F78375 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
-				D17A7FD720CC094D00F96634 /* Constant.swift */,
+				D1142B1321045DD300F78375 /* Constant.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -87,7 +87,7 @@
 		D18A65DF1FFB3882001FEAA7 /* Weather Forecast */ = {
 			isa = PBXGroup;
 			children = (
-				D17A7FD620CC092E00F96634 /* Constants */,
+				D1142B1221045DA800F78375 /* Constants */,
 				D18A65F41FFB39C2001FEAA7 /* Controller */,
 				D18A65F31FFB39BC001FEAA7 /* Model */,
 				D18A65F21FFB39B4001FEAA7 /* View */,
@@ -279,11 +279,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1142B1421045DD300F78375 /* Constant.swift in Sources */,
 				D18A65E31FFB3883001FEAA7 /* WeatherForecastVC.swift in Sources */,
 				D1142B0F2104503A00F78375 /* VVGooglePlaceView.swift in Sources */,
 				D18A65E11FFB3882001FEAA7 /* AppDelegate.swift in Sources */,
 				D1142B0D2104503200F78375 /* VVGooglePlaceTextField.swift in Sources */,
-				D17A7FD820CC094D00F96634 /* Constant.swift in Sources */,
 				D18A65F91FFB441B001FEAA7 /* WeatherModel.swift in Sources */,
 				D18A65F71FFB43C1001FEAA7 /* ChangeCityVC.swift in Sources */,
 			);

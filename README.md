@@ -11,9 +11,14 @@ Get the current weather forecast for your favourite places.
 
 ## Setup
 
+### 1. OpenWeatherMap
 * Create an account in [OpenWeatherMap](https://openweathermap.org)
 * Generate a new `API Key`.
 * Copy and paste the generated `API Key` in `API_KEY` property of `WeatherForecastVC` View Controller.
+
+### 2. Google Places API
+* To setup google places api for your project. Go to [Places SDK for iOS](https://developers.google.com/places/ios-sdk/start)
+* Then copy and paste the `API KEY` in  `GMSPlacesClient.provideAPIKey("PASTE YOUR API KEY HERE")`  to your AppDelegate file.
 * Then build and run the project.
 
 ## Compatibility
