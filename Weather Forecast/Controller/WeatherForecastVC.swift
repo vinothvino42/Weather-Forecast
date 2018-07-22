@@ -15,8 +15,6 @@ class WeatherForecastVC: UIViewController, CLLocationManagerDelegate, ChangeCity
 
     let WEATHER_URL = "http://api.openweathermap.org/data/2.5/weather"
     let API_KEY = Constant.API_KEY  //Remove "Constant.API_KEY" and place your API KEY here.
-    
-    //TODO: Declare instance variables
     let locationManager = CLLocationManager()
     let weatherModel = WeatherModel()
     
@@ -27,7 +25,7 @@ class WeatherForecastVC: UIViewController, CLLocationManagerDelegate, ChangeCity
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //TODO: Set up the location manager
+        //MARK: Set up the location manager
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
         locationManager.requestWhenInUseAuthorization()

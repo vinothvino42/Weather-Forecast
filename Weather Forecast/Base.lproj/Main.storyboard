@@ -1,19 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="HelveticaNeueLights.ttc">
-            <string>HelveticaNeue-Thin</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--Weather ForecastVC-->
         <scene sceneID="tne-QT-ifu">
@@ -128,12 +124,6 @@
                                             <action selector="backBtnPressed:" destination="Ula-6o-yEy" eventType="touchUpInside" id="WgT-bb-8xb"/>
                                         </connections>
                                     </button>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your city name here" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ls2-ba-lCx" userLabel="GooglePlacesTextField" customClass="RVGooglePlacesTextField" customModule="Weather_Forecast" customModuleProvider="target">
-                                        <rect key="frame" x="50" y="95.5" width="220" height="30"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uh0-ei-VXO">
                                         <rect key="frame" x="76" y="181" width="168" height="40"/>
                                         <constraints>
@@ -147,18 +137,26 @@
                                             <action selector="getWeatherTapped:" destination="Ula-6o-yEy" eventType="touchUpInside" id="0BV-Lb-PhJ"/>
                                         </connections>
                                     </button>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your city name.." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GbW-S4-oJz" customClass="VVGooglePlaceTextField" customModule="Weather_Forecast" customModuleProvider="target">
+                                        <rect key="frame" x="16" y="110" width="288" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="wyM-oP-3Pe"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="Uh0-ei-VXO" firstAttribute="leading" secondItem="XDh-0J-Bvo" secondAttribute="leading" constant="76" id="6o3-eJ-HzF"/>
-                                    <constraint firstAttribute="trailing" secondItem="ls2-ba-lCx" secondAttribute="trailing" constant="50" id="DdD-kx-YWi"/>
-                                    <constraint firstItem="ls2-ba-lCx" firstAttribute="centerX" secondItem="XDh-0J-Bvo" secondAttribute="centerX" id="KUv-8n-bOz"/>
+                                    <constraint firstItem="GbW-S4-oJz" firstAttribute="leading" secondItem="XDh-0J-Bvo" secondAttribute="leadingMargin" constant="8" id="8UD-an-s4Y"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="GbW-S4-oJz" secondAttribute="trailing" constant="8" id="LUi-fb-Qif"/>
                                     <constraint firstItem="As8-FP-W7a" firstAttribute="top" secondItem="XDh-0J-Bvo" secondAttribute="top" constant="35" id="MnL-yU-9mg"/>
                                     <constraint firstAttribute="trailing" secondItem="Uh0-ei-VXO" secondAttribute="trailing" constant="76" id="Su7-QW-AFc"/>
                                     <constraint firstAttribute="bottom" secondItem="Uh0-ei-VXO" secondAttribute="bottom" id="UWS-kQ-1fA"/>
                                     <constraint firstAttribute="height" constant="221" id="Wg1-hj-5Yd"/>
-                                    <constraint firstItem="ls2-ba-lCx" firstAttribute="centerY" secondItem="XDh-0J-Bvo" secondAttribute="centerY" id="Wks-ET-dhN"/>
                                     <constraint firstItem="As8-FP-W7a" firstAttribute="leading" secondItem="XDh-0J-Bvo" secondAttribute="leading" constant="16" id="XYu-oI-brf"/>
-                                    <constraint firstItem="ls2-ba-lCx" firstAttribute="leading" secondItem="XDh-0J-Bvo" secondAttribute="leading" constant="50" id="j7f-rS-upC"/>
+                                    <constraint firstItem="GbW-S4-oJz" firstAttribute="top" secondItem="As8-FP-W7a" secondAttribute="bottom" constant="35" id="uNv-2e-rrZ"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -175,7 +173,7 @@
                         <viewLayoutGuide key="safeArea" id="24U-Jp-MX4"/>
                     </view>
                     <connections>
-                        <outlet property="googlePlacesTextField" destination="ls2-ba-lCx" id="Bpe-Yj-k3B"/>
+                        <outlet property="cityTextField" destination="GbW-S4-oJz" id="L6H-2K-PsP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sg6-vg-lYR" userLabel="First Responder" sceneMemberID="firstResponder"/>

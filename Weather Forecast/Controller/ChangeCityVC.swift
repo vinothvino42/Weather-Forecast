@@ -14,27 +14,29 @@ protocol ChangeCityDelegate {
 }
 
 class ChangeCityVC: UIViewController, UISearchControllerDelegate {
-    
+  
+    @IBOutlet weak var cityTextField: VVGooglePlaceTextField!
     var delegate: ChangeCityDelegate?
-    @IBOutlet weak var googlePlacesTextField: RVGooglePlacesTextField!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        googlePlacesTextField.highLightTypeTextedEnabled = true
-        
-        //For Getting selected place and indexPath
-        googlePlacesTextField.selectedPlace = { place , indexPath in
-            print("SELECTED PLACE : \(place)")
-            print("INDEXPATH : \(indexPath)")
-            let cityName = place
-            //self.delegate?.userEnteredNewCityName(city: cityName)
-        }
-        
+        cityTextField.addTarget(cityTextField, action: #selector(cityTextField.getDataFromGooglePlaces), for: .editingChanged)
+        cityTextField.attributedPlaceholder = NSAttributedString(string: "Enter your city name..", attributes: [
+            .foregroundColor: UIColor.lightGray,
+            .font: UIFont.boldSystemFont(ofSize: 17.0)
+            ])
+        cityTextField.vvgooglePlaceViewHeight = 200
+    
     }
- 
+    
+
     @IBAction func getWeatherTapped(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        DispatchQueue.main.async {
+            let cityName = self.cityTextField.text!
+            self.delegate?.userEnteredNewCityName(city: cityName)
+            self.dismiss(animated: true, completion: nil)
+        }
     }
     
     @IBAction func backBtnPressed(_ sender: Any) {
@@ -42,3 +44,4 @@ class ChangeCityVC: UIViewController, UISearchControllerDelegate {
     }
   
 }
+

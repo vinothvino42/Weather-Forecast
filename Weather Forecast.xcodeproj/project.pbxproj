@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D13AA38120CD1955000DDD83 /* RVGoogleAutoCompletePlaceTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13AA38020CD1954000DDD83 /* RVGoogleAutoCompletePlaceTextField.swift */; };
+		D1142B0D2104503200F78375 /* VVGooglePlaceTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1142B0C2104503200F78375 /* VVGooglePlaceTextField.swift */; };
+		D1142B0F2104503A00F78375 /* VVGooglePlaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1142B0E2104503A00F78375 /* VVGooglePlaceView.swift */; };
 		D17A7FD820CC094D00F96634 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17A7FD720CC094D00F96634 /* Constant.swift */; };
 		D18A65E11FFB3882001FEAA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18A65E01FFB3882001FEAA7 /* AppDelegate.swift */; };
 		D18A65E31FFB3883001FEAA7 /* WeatherForecastVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18A65E21FFB3883001FEAA7 /* WeatherForecastVC.swift */; };
@@ -22,7 +23,8 @@
 /* Begin PBXFileReference section */
 		0CE0E95139C4998880884432 /* Pods_Weather_Forecast.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Weather_Forecast.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E58D09C488AF3050A6F6AF0 /* Pods-Weather Forecast.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weather Forecast.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Weather Forecast/Pods-Weather Forecast.debug.xcconfig"; sourceTree = "<group>"; };
-		D13AA38020CD1954000DDD83 /* RVGoogleAutoCompletePlaceTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RVGoogleAutoCompletePlaceTextField.swift; sourceTree = "<group>"; };
+		D1142B0C2104503200F78375 /* VVGooglePlaceTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VVGooglePlaceTextField.swift; sourceTree = "<group>"; };
+		D1142B0E2104503A00F78375 /* VVGooglePlaceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VVGooglePlaceView.swift; sourceTree = "<group>"; };
 		D17A7FD720CC094D00F96634 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		D18A65DD1FFB3882001FEAA7 /* Weather Forecast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Weather Forecast.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D18A65E01FFB3882001FEAA7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 				D18A65F31FFB39BC001FEAA7 /* Model */,
 				D18A65F21FFB39B4001FEAA7 /* View */,
 				D18A65E71FFB3883001FEAA7 /* Assets.xcassets */,
+				D18A65E41FFB3883001FEAA7 /* Main.storyboard */,
 				D18A65E91FFB3883001FEAA7 /* LaunchScreen.storyboard */,
 				D18A65F51FFB3A2B001FEAA7 /* Supporting Files */,
 			);
@@ -99,8 +102,8 @@
 		D18A65F21FFB39B4001FEAA7 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				D18A65E41FFB3883001FEAA7 /* Main.storyboard */,
-				D13AA38020CD1954000DDD83 /* RVGoogleAutoCompletePlaceTextField.swift */,
+				D1142B0E2104503A00F78375 /* VVGooglePlaceView.swift */,
+				D1142B0C2104503200F78375 /* VVGooglePlaceTextField.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -277,11 +280,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				D18A65E31FFB3883001FEAA7 /* WeatherForecastVC.swift in Sources */,
+				D1142B0F2104503A00F78375 /* VVGooglePlaceView.swift in Sources */,
 				D18A65E11FFB3882001FEAA7 /* AppDelegate.swift in Sources */,
+				D1142B0D2104503200F78375 /* VVGooglePlaceTextField.swift in Sources */,
 				D17A7FD820CC094D00F96634 /* Constant.swift in Sources */,
 				D18A65F91FFB441B001FEAA7 /* WeatherModel.swift in Sources */,
 				D18A65F71FFB43C1001FEAA7 /* ChangeCityVC.swift in Sources */,
-				D13AA38120CD1955000DDD83 /* RVGoogleAutoCompletePlaceTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
