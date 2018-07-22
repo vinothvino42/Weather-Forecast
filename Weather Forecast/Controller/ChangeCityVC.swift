@@ -35,8 +35,8 @@ class ChangeCityVC: UIViewController, UISearchControllerDelegate {
         DispatchQueue.main.async {
             let cityName = self.cityTextField.text!
             self.delegate?.userEnteredNewCityName(city: cityName)
-            self.dismiss(animated: true, completion: nil)
         }
+        self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func backBtnPressed(_ sender: Any) {

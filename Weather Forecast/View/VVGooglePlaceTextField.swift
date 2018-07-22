@@ -33,6 +33,8 @@ public class VVGooglePlaceTextField: UITextField {
     }
     
     override public func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.placeholder = ""
+        self.textAlignment = .left
         if isOpen == false {
             isOpen = true
             NSLayoutConstraint.deactivate([self.vvgooglePlaceViewHeightConstraint])
@@ -66,10 +68,10 @@ public class VVGooglePlaceTextField: UITextField {
         if self.text == "" {
             dismissVVGooglePlaceView()
         }
-        let filter = GMSAutocompleteFilter()
-        filter.type = .city
+        //let filter = GMSAutocompleteFilter()
+        //filter.type = .city
         let placesClient = GMSPlacesClient()
-        placesClient.autocompleteQuery(self.text!, bounds: nil, filter: filter) { (resultsFromGooglePlaces, error) in
+        placesClient.autocompleteQuery(self.text!, bounds: nil, filter: nil) { (resultsFromGooglePlaces, error) in
             if let error = error {
                 print("Autocomplete error: ",error)
                 return
@@ -77,7 +79,7 @@ public class VVGooglePlaceTextField: UITextField {
             if let results = resultsFromGooglePlaces {
                 for result in results {
                     
-                    self.googlePlaces.append(result.attributedFullText.string)
+                    self.googlePlaces.append(result.attributedPrimaryText.string)
                     self.vvgooglePlaceView.datas = self.googlePlaces
                     
                     NSLayoutConstraint.deactivate([self.vvgooglePlaceViewHeightConstraint])
