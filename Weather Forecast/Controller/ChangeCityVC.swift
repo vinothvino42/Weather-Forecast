@@ -7,39 +7,41 @@
 //
 
 import UIKit
+import GooglePlaces
 
 protocol ChangeCityDelegate {
     func userEnteredNewCityName(city: String)
 }
 
-class ChangeCityVC: UIViewController {
-
+class ChangeCityVC: UIViewController, UISearchControllerDelegate {
+  
+    @IBOutlet weak var cityTextField: VVGooglePlaceTextField!
     var delegate: ChangeCityDelegate?
     
-    @IBOutlet weak var cityTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        cityTextField.addTarget(cityTextField, action: #selector(cityTextField.getDataFromGooglePlaces), for: .editingChanged)
+        cityTextField.attributedPlaceholder = NSAttributedString(string: "Enter your city name..", attributes: [
+            .foregroundColor: UIColor.lightGray,
+            .font: UIFont.boldSystemFont(ofSize: 17.0)
+            ])
+        cityTextField.vvgooglePlaceViewHeight = 200
+    
     }
     
+
     @IBAction func getWeatherTapped(_ sender: Any) {
         DispatchQueue.main.async {
             let cityName = self.cityTextField.text!
             self.delegate?.userEnteredNewCityName(city: cityName)
-            self.dismiss(animated: true, completion: nil)
         }
+        self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func backBtnPressed(_ sender: Any) {
-        DispatchQueue.main.async {
-            self.dismiss(animated: true, completion: nil)
-        }
+        self.dismiss(animated: true, completion: nil)
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
+  
 }
+
